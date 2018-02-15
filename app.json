@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/find/index",
+    "pages/mine/index",
+    "pages/basket/index",
+    "pages/tips/index",
+    "pages/writeTips/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#65b393",
+    "navigationBarTitleText": "Tips",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "borderStyle": "#fff",
+    "selectedColor": "#65b393",
+    "color": "#000",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "写日记",
+        "iconPath": "icons/note.png",
+        "selectedIconPath": "icons/note_click.png"
+      },
+      {
+        "pagePath": "pages/basket/index",
+        "text": "废纸篓",
+        "iconPath": "icons/basket.png",
+        "selectedIconPath": "icons/basket_click.png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text": "发现",
+        "iconPath": "icons/find.png",
+        "selectedIconPath": "icons/find_click.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "icons/mine.png",
+        "selectedIconPath": "icons/mine_click.png"
+      }
+    ]
+  }
+}

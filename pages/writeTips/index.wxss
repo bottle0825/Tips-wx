@@ -1,0 +1,16 @@
+/* pages/writeTips/index.wxss */
+.photo image{
+  width: 750rpx;
+  height: 700rpx;
+}
+.content{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.content text{
+  color: #999;
+  font-size: 28rpx;
+}
+.address{
+  float: right;
+}

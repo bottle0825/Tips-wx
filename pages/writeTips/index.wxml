@@ -1,0 +1,16 @@
+<!--pages/writeTips/index.wxml-->
+<view>
+  <view class='photo'>
+    <image src='/images/tips.png'></image>
+  </view>
+  <view class='content'>
+    <text class='time'>
+      {{date}} {{time}}  {{week}}
+    </text>
+    <input placeholder='TITLE'></input>
+    <textarea placeholder='content'></textarea>
+    <text class='address'>
+      写于： {{address}}
+    </text>
+  </view>
+</view>

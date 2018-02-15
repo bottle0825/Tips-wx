@@ -1,0 +1,16 @@
+<!--pages/home/index.wxml-->
+<swiper indicator-dots="true" indicator-active-color="#fff">
+  <block wx:for="{{list}}">
+    <swiper-item bindtap='openBooks' data-id='{{item.id}}'>
+      <view class='books'>
+        <view class='cover'>
+        <image src='/images/book.jpg'></image>
+        </view>
+        <view class='name'>
+          <text>{{item.name}}</text>
+          <text class='count'>共 {{item.count}} 篇</text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

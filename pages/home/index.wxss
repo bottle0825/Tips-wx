@@ -1,0 +1,35 @@
+/* pages/home/index.wxss */
+swiper{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 1110rpx;
+  background: #dbd0c7;
+}
+.books{
+  width: 600rpx;
+  height: 950rpx;
+  margin: 75rpx;
+  background: #fff;
+  font-size: 50rpx;
+  border-radius: 10rpx 40rpx 40rpx 10rpx;
+  box-shadow: 5rpx 0rpx 20rpx #666;
+  overflow: hidden;
+}
+.cover{
+  width: 100%;
+  height: 750rpx;
+  overflow: hidden;
+}
+.books image{
+  width: 100%;
+  height: 800rpx;
+}
+.name{
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.count{
+  display: block;
+  font-size: 32rpx;
+}

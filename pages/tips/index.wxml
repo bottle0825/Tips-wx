@@ -1,0 +1,18 @@
+<!--pages/tips/index.wxml-->
+<view class='top'>
+  手账篇数：{{count}}
+</view>
+<view class='content'>
+  <view class='item' wx:for='{{list}}' bindtap='openTips' data-id='{{item.id}}'>
+    <view class='pic'>
+      <image src='/images/book.jpg'></image>
+    </view>
+    <view class='title'>
+      {{item.title}}
+      <text>{{item.date}}</text>
+    </view>
+  </view>
+</view>
+<view class='write' bindtap='writeTips'>
+  <image src='/icons/write.png'></image>
+</view>
