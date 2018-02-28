@@ -1,0 +1,31 @@
+<!--pages/login/login.wxml-->
+<view class='main'>
+  <view class='tab'>
+    <view class="{{flag?'active':''}}" bindtap='changePhone'>手机快捷登录</view>
+    <view class="{{flag?'':'active'}}" bindtap='changeWord'>账户密码登录</view>
+  </view>
+  <!-- 账号密码登录 -->
+  <view class="{{flag?'Input':'Input show'}}">
+    <view>
+      <input type='text' placeholder='请输入账号' bindinput='usernameInput' placeholder-class='pl'></input>
+    </view>
+    <view>
+      <input type='text' password='true' placeholder='请输入密码' bindinput='pwdInput' placeholder-class='pl'></input>
+    </view>
+    <text bindtap='openForget' class='forget'>忘记密码？立即找回</text>
+    <button bindtap='loginAction_word' class='btn'>登录</button>
+  </view>
+  <!-- 手机登录 -->
+  <view class="{{flag?'Input show':'Input'}}">
+    <view>
+      <input type='tel' placeholder='请输入手机号' bindinput='phoneInput' placeholder-class='pl'></input>
+      <button wx:if="{{pflag}}" bindtap='Check' class='Check'>获取验证码</button>
+      <button wx:else class='Wait'>重新发送{{time}}</button>
+    </view>
+    <view>
+      <input type='tel' placeholder='请输入验证码' bindinput='checkInput' placeholder-class='pl'></input>
+    </view>
+    <button bindtap='loginAction_phone' class='btn'>登录</button>
+  </view>
+  <view bindtap='openRegister' class='footer'>没有账号？点击注册</view>
+</view>

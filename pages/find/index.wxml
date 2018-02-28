@@ -1,2 +1,9 @@
 <!--pages/find/index.wxml-->
-<text>pages/find/index.wxml</text>
+<view class='header'>
+  <view class='bg'>
+    <image src='/images/tips.png'></image>
+  </view>
+  <view class='shadow'></view>
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap='openExit'></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>

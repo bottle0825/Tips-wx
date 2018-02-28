@@ -1,2 +1,15 @@
 <!--pages/basket/index.wxml-->
-<text>pages/basket/index.wxml</text>
+<view class='top'>
+  手账篇数：{{count}}
+</view>
+<view class='content'>
+  <view class='item' wx:for='{{list}}' bindtap='openTips' data-id='{{item.id}}'>
+    <text>{{item.date}}</text>
+    <view class='title'>
+      {{item.title}}
+    </view>
+    <view class='pic'>
+      <image src='/images/book.jpg'></image>
+    </view>
+  </view>
+</view>

@@ -5,7 +5,12 @@
     "pages/mine/index",
     "pages/basket/index",
     "pages/tips/index",
-    "pages/writeTips/index"
+    "pages/writeTips/index",
+    "pages/login/login",
+    "pages/pwd_find/pwd_find",
+    "pages/pwd_set/pwd_set",
+    "pages/register/register",
+    "pages/register_message/register_message"
   ],
   "window": {
     "backgroundTextStyle": "light",

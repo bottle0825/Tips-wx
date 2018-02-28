@@ -1,1 +1,55 @@
 /* pages/mine/index.wxss */
+page{
+  background: #f5f5f7;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border: 4rpx solid #fff;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+.container{
+  margin: 0;
+  padding: 50rpx 0;
+}
+.header{
+  height: 314rpx;
+  margin: 0;
+  background: #65b393;
+}
+.main{
+  margin: 20rpx 0;
+  width: 100%;
+  background: rgb(247, 247, 250);
+  box-sizing: border-box;
+}
+.team{
+  margin-top: 20rpx;
+}
+.main .item{
+  width: 750rpx;
+  background: #fff;
+  padding: 30rpx;
+  border: 1rpx solid #f5f5f7;
+  box-sizing: border-box;
+}
+.main .item view{
+  color: #999;
+  float: right;
+}
+.setout{
+  width: 750rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx;
+  border: 1rpx solid #f5f5f7;
+  box-sizing: border-box;
+  text-align: center;
+  color: #65b393;
+}

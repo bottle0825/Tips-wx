@@ -1,43 +1,18 @@
-// pages/basket/index.js
+// pages/pwd_set/pwd_set.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    count: 4,
-    list: [{
-      id: '0',
-      title: '123',
-      date: '2018/02/15'
-    },
-    {
-      id: '1',
-      title: '123',
-      date: '2018/02/15'
-    },
-    {
-      id: '1',
-      title: '123',
-      date: '2018/02/15'
-    },
-    {
-      id: '1',
-      title: '123',
-      date: '2018/02/15'
-    },
-    {
-      id: '1',
-      title: '123',
-      date: '2018/02/15'
-    },
-    {
-      id: '1',
-      title: '123',
-      date: '2018/02/15'
-    }]
+    pwd: '',
+    repwd: ''
   },
-
+  finishAction: function () {
+    wx.switchTab({
+      url: '/pages/home/home',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

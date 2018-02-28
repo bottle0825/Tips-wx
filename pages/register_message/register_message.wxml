@@ -1,0 +1,16 @@
+<!--pages/register_message/register_message.wxml-->
+<view class='main'>
+  <text class='title'>欢迎注册为会员</text>
+  <view class='Input'>
+  <view>
+    <input type='text' placeholder='请输入昵称' bindinput='usernameInput' placeholder-class='pl'></input>
+  </view>
+  <view>
+    <input type='text' password='true' placeholder='请输入密码' bindinput='pwdInput' placeholder-class='pl'></input>
+  </view>
+  <view>
+    <input type='text' password='true' placeholder='请再次输入密码' bindinput='repwdInput' placeholder-class='pl'></input>
+  </view>
+    <button bindtap='Register' class='.btn'>完成</button>
+  </view>
+</view>

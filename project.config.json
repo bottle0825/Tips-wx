@@ -26,7 +26,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -45,6 +45,29 @@
 					"name": "wirtetips",
 					"pathName": "pages/writeTips/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "basket",
+					"pathName": "pages/basket/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "find",
+					"pathName": "pages/find/index"
 				}
 			]
 		}

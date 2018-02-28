@@ -1,0 +1,55 @@
+/* pages/pwd_set/pwd_set.wxss */
+ page{
+  background: url('http://111.231.103.97:9999/Spec-CRM/image/appear_bg.png'); 
+  background-size: 100% 100%;
+} 
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}
+.Input{
+  padding: 0 103rpx;
+}
+.Input>view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 544rpx;
+  height: 92rpx;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12rpx;
+  padding: 0 20rpx 0 38rpx;
+  margin-bottom: 27rpx;
+  box-sizing: border-box;
+}
+input{
+  width: 100%;
+  color: #fff;
+}
+.pl{
+  color: #fdcfcb;
+  font-size: 28rpx;
+}
+.btn{
+  margin-top: 67rpx;
+  border-radius: 46rpx;
+  color: #fa625d;
+  font-size: 36rpx;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  line-height: 105rpx;
+  width: 100%;
+  color: #fdcfcb;
+  text-align: center;
+  font-size: 30rpx;
+  border-top: 1rpx solid #fdcfcb;
+}

@@ -1,0 +1,14 @@
+<!--pages/pwd_find/pwd_find.wxml-->
+<view class='main'>
+  <text class='title'>通过手机号找回</text>
+  <view class='Input'>
+  <view>
+    <input type='text' placeholder='请输入手机号' bindinput='phoneInput' placeholder-class='pl'></input>
+    <button bindtap='Check' class='Check'>获取验证码</button>
+  </view>
+  <view>
+    <input type='text' placeholder='请输入验证码' bindinput='checkInput' placeholder-class='pl'></input>
+  </view>
+  <button bindtap='nextAction' class='btn'>下一步</button>
+  </view>
+</view>
