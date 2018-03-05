@@ -1,82 +1,76 @@
-// pages/find/index.js
-const app = getApp()
-
+// pages/follower/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    list: [{
+      id: 0,
+      head: '/images/tips.png',
+      nickname: '我贼TM牛批',
+      words: '没错最牛逼的那个其实就是我啊！！',
+    }, {
+      id: 0,
+      head: '/images/tips.png',
+      nickname: '我贼TM牛批',
+      words: '没错最牛逼的那个其实就是我啊！！',
+    }]
+  },
 
-  },
-  openPage: function (){
-    wx.navigateTo({
-      url: '/pages/homepage/index',
-    })
-  },
-  openWords: function () {
-    wx.navigateTo({
-      url: '/pages/words/index',
-    })
-  },
-  openAccount: function () {
-    wx.navigateTo({
-      url: '/pages/account/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

@@ -10,7 +10,15 @@
     "pages/pwd_find/pwd_find",
     "pages/pwd_set/pwd_set",
     "pages/register/register",
-    "pages/register_message/register_message"
+    "pages/register_message/register_message",
+    "pages/homepage/index",
+    "pages/follower/index",
+    "pages/following/index",
+    "pages/about/about",
+    "pages/words/index",
+    "pages/account/index",
+    "pages/password/index",
+    "pages/addAccount/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

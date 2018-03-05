@@ -1,0 +1,12 @@
+<!--pages/about/about.wxml-->
+<view class='icon'>
+  <image src='/images/tips.png'></image>
+  <text>v1.1.0</text>
+</view>
+<view class='detail'>
+  <view>
+    Tips是一款开源的，为现代人设计的，互联网+的手账软件，旨在给现代快节奏生活的人们一个便捷的记录手账的工具，同时也提供了一个手账分享的环境给手账爱好者进行交流。
+  </view>
+  <text>开发设计：bottle0825</text>
+  <text>github地址：http://github.com/bottle0825</text>
+</view>

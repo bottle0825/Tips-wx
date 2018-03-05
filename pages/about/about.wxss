@@ -1,0 +1,29 @@
+/* pages/about/about.wxss */
+page{
+    height: 100%;
+    background: #efefef;
+}
+.icon{
+  width: 100%;
+  background: #fff;
+  text-align: center;
+}
+.icon image{
+  width: 480rpx;
+  height: 480rpx;
+}
+.icon text{
+  display: block;
+  font-size: 48rpx;
+}
+.detail{
+  margin-top: 5rpx;
+  background: #fff;
+  font-size: 32rpx;
+  padding: 30rpx;
+}
+.detail text{
+  display: block;
+  margin-top: 20rpx;
+  color: #65b393;
+}

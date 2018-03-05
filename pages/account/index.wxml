@@ -1,0 +1,64 @@
+<!--pages/account/index.wxml-->
+<view class='header'>
+  <view class='budget'>
+    <view>{{budget}}</view>
+    <text>{{month}}月预算结余</text>
+  </view>
+  <view class='show'>
+    <view class='in'>
+      <view>{{in}}</view>
+      <text>{{month}}月收入</text>
+    </view>
+    <view class='out'>
+      <view>{{out}}</view>
+      <text>{{month}}月支出</text>
+    </view>
+  </view>
+</view>
+<view class='tab'>
+  <view class="{{active == 'day' ?'active':''}}" bindtap='dayClick'>日</view>
+  <view class="{{active == 'month' ?'active':''}}" bindtap='monthClick'>月</view>
+  <view class="{{active == 'year' ?'active':''}}" bindtap='yearClick'>年</view>
+</view>
+<view class='list'>
+  <view class='daylist' wx:if="{{active == 'day'}}">
+    <view class='top'>
+      <text>今日收入:{{dayIn}}</text>
+      <text>今日支出:{{dayOut}}</text>
+    </view>
+    <view class='item' wx:for="{{daylist}}">
+      <image src='{{item.iconimg}}'></image> 
+      <text>{{item.icon}}</text>
+      <view wx:if="{{item.type}}" class='moneyin'>+{{item.money}}</view> 
+      <view wx:else class='moneyout'>-{{item.money}}</view>
+    </view>
+  </view>
+  <view class='monthlist' wx:elif="{{active == 'month'}}">
+    <view class='top'>
+      <text>本月收入:{{monthIn}}</text>
+      <text>本月支出:{{monthOut}}</text>
+      <text>本月结余:{{monthLeft}}</text>
+    </view>
+    <view class='item' wx:for="{{monthlist}}">
+      <text class='date'>{{item.date}}日</text>
+      <text>收入:{{item.in}}</text>
+      <text>支出:{{item.out}}</text>
+    </view>
+  </view>
+  <view class='yearlist' wx:else="{{active == 'year'}}">
+    <view class='top'>
+      <text>年度收入:{{yearIn}}</text>
+      <text>年度支出:{{yearOut}}</text>
+      <text>年度支出:{{yearLeft}}</text>
+    </view>
+    <view class='item' wx:for="{{yearlist}}">
+      <text class='date'>{{item.month}}月</text>
+      <text>收入:{{item.in}}</text>
+      <text>支出:{{item.out}}</text>
+      <text>结余:{{item.left}}</text>
+    </view>
+  </view>
+</view>
+<view class='add' bindtap='openAdd'>
+  <image src='/icons/write.png'></image>
+</view>

@@ -1,34 +1,18 @@
-// pages/find/index.js
-const app = getApp()
-
+// pages/addAccount/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+  
+  },
 
-  },
-  openPage: function (){
-    wx.navigateTo({
-      url: '/pages/homepage/index',
-    })
-  },
-  openWords: function () {
-    wx.navigateTo({
-      url: '/pages/words/index',
-    })
-  },
-  openAccount: function () {
-    wx.navigateTo({
-      url: '/pages/account/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+  
   },
 
   /**

@@ -1,0 +1,108 @@
+/* pages/account/index.wxss */
+.header{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background: #65b393;
+  color: #fff;
+  text-align: center;
+}
+.budget view{
+  font-size: 80rpx;
+}
+.show{
+  display: flex;
+  width: 100%;
+  margin-top: 30rpx;
+}
+.show>view{
+  flex: 1;
+  font-size: 28rpx;
+}
+.tab{
+  display: flex;
+  background: #65b393;
+  color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.tab>view{
+  flex: 1;
+  text-align: center;
+  border: 1rpx solid #fff;
+}
+.tab>view:first-child{
+  border-right: none;
+  border-radius: 10rpx 0 0 10rpx;
+}
+.tab>view:last-child{
+  border-left: none;
+  border-radius: 0 10rpx 10rpx 0;
+}
+.active{
+  background: #fff;
+  color: #65b393;
+}
+.top{
+  width: 100%;
+  line-height: 60rpx;
+  background: #efefef;
+  color: #666;
+  font-size: 32rpx;
+}
+.top text{
+  margin-left: 20rpx;
+}
+
+.item{
+  height: 120rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.item text{
+  margin-right: 30rpx;
+}
+.date{
+  display: inline-block;
+  color: #ffc65d;
+  font-size: 48rpx; 
+}
+.daylist .item image{
+  height: 100rpx;
+  width: 100rpx;
+  vertical-align: bottom;
+}
+.daylist .item text{
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.daylist .item view{
+  float: right;
+  line-height: 100rpx;
+}
+.daylist .moneyin{
+  color: #65b393;
+}
+.daylist .moneyout{
+  color: #fb705d;
+}
+.add{
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 18rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #65b393;
+  box-shadow: 0 0 20rpx #999;
+  z-index: 99;
+}
+.add image{
+  width: 64rpx;
+  height: 64rpx;
+}

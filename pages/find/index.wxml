@@ -1,9 +1,17 @@
 <!--pages/find/index.wxml-->
-<view class='header'>
-  <view class='bg'>
-    <image src='/images/tips.png'></image>
+<view class='team'>
+  <view class='item' bindtap='openPage'>
+    手账圈
+    <text>></text>
   </view>
-  <view class='shadow'></view>
-  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap='openExit'></image>
-  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class='team'>
+  <view class='item' bindtap='openWords'>
+    单词本
+    <text>></text>
+  </view>
+  <view class='item' bindtap='openAccount'>
+    随身账本
+    <text>></text>
+  </view>
 </view>

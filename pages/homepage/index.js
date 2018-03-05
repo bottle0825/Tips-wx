@@ -1,48 +1,32 @@
-
+// pages/find/index.js
 const app = getApp()
 
-// pages/mine/mine.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    list: [{
+      nickname: 'Yeon',
+      content: 'text hhhhhsajhfjdbkjsabfjkbasfjsabjkfbs',
+      time: '1 minutes age'
+    }, {
+      nickname: 'Yeon',
+      content: 'text hhhhhsajhfjdbkjsabfjkbasfjsabjkfbs',
+      time: '1 minutes age'
+    }, {
+      nickname: 'Yeon',
+      content: 'text hhhhhsajhfjdbkjsabfjkbasfjsabjkfbs',
+      time: '1 minutes age'
+    }]
   },
-  openHomePage: function () {
-    wx.navigateTo({
-      url: '/pages/homepage/index',
-    })
-  },
-  openFollowing: function () {
-    wx.navigateTo({
-      url: '/pages/following/index',
-    })
-  },
-  openFollower: function () {
-    wx.navigateTo({
-      url: '/pages/follower/index',
-    })
-  },
-  openAbout: function () {
-    wx.navigateTo({
-      url: '/pages/about/about',
-    })
-  },
-  openPassword: function () {
-    wx.navigateTo({
-      url: '/pages/password/index',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //设置页面标题
-    wx.setNavigationBarTitle({
-      title: '我的',
-    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -118,20 +102,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  openAsset: function () {
-    wx.navigateTo({
-      url: '/pages/asset/asset'
-    })
-  },
-  openCustomer: function () {
-    wx.navigateTo({
-      url: '/pages/customer_list/customer_list'
-    })
-  },
-  openExit: function () {
-    wx.navigateTo({
-      url: '/pages/exit/exit',
-    })
   }
 })

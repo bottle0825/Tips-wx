@@ -1,0 +1,58 @@
+/* pages/follower/index.wxss */
+page{
+  height: 100%;
+  background: #efefef;
+}
+.search{
+  display: flex;
+  width: 690rpx;
+  background: #fff;
+  margin: 20rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.search image{
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 20rpx;
+}
+.search input{
+  width: 620rpx;
+}
+.shows{
+  width: 100%;
+  height: 200rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.head{
+  width: 160rpx;
+  height: 160rpx;
+  padding-right: 20rpx;
+} 
+.center{
+  width: 400rpx;
+}
+.words{
+  color: #999;
+  font-size: 28rpx;
+}
+.follow{
+  width: 150rpx;
+  color: #ff8800;
+  border: 1rpx solid #ff8800;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.following{
+  width: 150rpx;
+  color: #999;
+  border: 1rpx solid #999;
+  border-radius: 10rpx;
+  text-align: center;
+}

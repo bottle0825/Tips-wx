@@ -1,0 +1,20 @@
+<!--pages/homepage/index.wxml-->
+<view class='header'>
+  <view class='bg'>
+    <image src='/images/tips.png'></image>
+  </view>
+  <view class='shadow'></view>
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap='openExit'></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class='shows' wx:for='{{list}}' data-id='{{item.id}}'>
+  <view>
+    <image class='head' src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view>
+    <view class='nickname'>{{item.nickname}}</view>
+    <view class='content'>{{item.content}}</view>
+    <image class='img' src='/images/tips.png'></image>
+    <view class='time'>{{item.time}}</view>
+  </view>
+</view>

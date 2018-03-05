@@ -7,30 +7,27 @@
 </view>
 <view class='main'>
   <view class='team'>
-    <view class='item'>
+    <view class='item' bindtap='openHomePage'>
       <text>我的主页</text>
       <view>></view>
     </view>
-    <view class='item'>
+    <view class='item' bindtap='openFollowing'>
       <text>我的关注</text>
       <view>></view>
     </view>
-    <view class='item'>
+    <view class='item' bindtap='openFollower'>
       <text>我的粉丝</text>
       <view>></view>
     </view>
   </view>
   <view class='team'>
-    <view class='item'>
+    <view class='item' bindtap='openAbout'>
       <text>关于我们</text>
       <view>></view>
     </view>
-    <view class='item'>
+    <view class='item' bindtap='openPassword'>
       <text>设置密码锁</text>
       <view>></view>
     </view>
-  </view>
-  <view class='setout'>
-    <text>退出登陆</text>
   </view>
 </view>

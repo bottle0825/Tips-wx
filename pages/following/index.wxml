@@ -1,0 +1,17 @@
+<!--pages/follower/index.wxml-->
+<view class='search'>
+  <image src='/icons/search.png'></image>
+  <input placeholder='搜索'></input>
+</view>
+<view class='shows' wx:for='{{list}}' data-id='{{item.id}}'>
+  <view>
+    <image class='head' src="{{item.head}}"></image>
+  </view>
+  <view class='center'>
+    <view class='nickname'>{{item.nickname}}</view>
+    <view class='words'>{{item.words}}</view>
+  </view>
+  <view class='follow'>
+    已关注
+  </view>
+</view>
