@@ -93,6 +93,12 @@
 					"name": "account",
 					"pathName": "pages/account/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "pages/register/register",
+					"query": ""
 				}
 			]
 		}

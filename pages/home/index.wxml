@@ -7,10 +7,14 @@
         <image src='/images/book.jpg'></image>
         </view>
         <view class='name'>
-          <text>{{item.name}}</text>
+          <text>{{item.title}}</text>
           <text class='count'>共 {{item.count}} 篇</text>
         </view>
       </view>
     </swiper-item>
   </block>
 </swiper>
+
+<view class='write' bindtap='addNote'>
+  <image src='/icons/add.png'></image>
+</view>

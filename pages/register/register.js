@@ -1,108 +1,64 @@
 // pages/register/register.js
+const app = getApp()
+import * as Model from '../model/user.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
     time: 60,
     flag: true,
     code: '',
     phone: '',
     check: '',
   },
+  //请求短信验证码
   Check: function () {
-    wx.request({
-      url: getApp().data.servsers + '/api/login/send_code',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        mobile: this.data.phone,
-        codeType: 2
-      },
-      success: (res) => {
-        if(res.data.status == 1){
+    Model.userSendCode({
+      mobile: this.data.phone,
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        flag: false,
+        time: 60
+      })
+      var timer;
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (this.data.time > 0) {
           this.setData({
             flag: false,
+            time: this.data.time - 1
+          })
+        } else {
+          this.setData({
+            flag: true,
             time: 60
           })
-          var timer;
           clearInterval(timer);
-          timer = setInterval(() => {
-            if(this.data.time > 0){
-              this.setData({
-                flag: false,
-                time: this.data.time - 1
-              })
-            }else{
-              this.setData({
-                flag: true,
-                time: 60
-              })
-              clearInterval(timer);
-            }
-          },1000)
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'success',
-            duration: 2000
-          })
-        }else{
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
         }
-      },
-      fail: function () {
-        wx.showToast({
-          title: '服务器连接失败',
-          icon: 'none',
-          duration: 2000
-        })
-      }
+      }, 1000)
+      wx.showToast({
+        title: '验证码已发送',
+        icon: 'success',
+        duration: 2000
+      })
     })
   },
+  //请求录入手机号
   registerAction: function () {
-    console.log(this.data)
-    wx.request({
-      url: getApp().data.servsers + '/api/login/register_verify',
-      method: 'POST', 
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        code: this.data.code,
-        mobile: this.data.phone,
-        mobile_code: this.data.check,
-      },
-      success: (res) => {
-        if (res.data.status == 1) {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-          wx.navigateTo({
-            url: '/pages/register_message/register_message?phone=' + this.data.phone + '&code=' + this.data.code,
-          })
-        }else{
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      }
+    Model.userSetPhone({
+      mobile: this.data.phone,
+      mobile_code: this.data.check,
+    }).then((res) => {
+      console.log(res)
+            wx.switchTab({
+        url: '/pages/home/index',
+      })
     })
-  },
-  codeInput: function (e) {
-    this.setData({
-      code: e.detail.value
-    })
+    
   },
   phoneInput: function (e) {
     this.setData({
@@ -114,13 +70,78 @@ Page({
       check: e.detail.value
     })
   },
+  sendPersonal: function (userInfo) {
+    console.log(userInfo)
+    wx.login({
+      success: (res) => {
+        var code = res.code;
+        if (code) {
+          //发起网络请求
+          wx.request({
+            url: getApp().data.servsers + '/users/authorize/set_wxcode',
+            method: 'POST',
+            data: {
+              nickName: this.data.userInfo.nickName,
+              head: this.data.userInfo.avatarUrl,
+              code: code
+            },
+            success: (res) => {
+              wx.setStorage({
+                key: 'sessionId',
+                data: res.data.data.sessionId,
+              })
+            },
+            fail: function () {
+              wx.showToast({
+                title: '服务器连接失败',
+                icon: 'none',
+                duration: 2000
+              })
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '注册',
+      title: '完善信息',
     })
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+      this.sendPersonal(app.globalData.userInfo)
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        this.sendPersonal(res.userInfo)
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+          this.sendPersonal(res.userInfo)
+        }
+      })
+    }
+     
   },
 
   // /**
@@ -133,9 +154,9 @@ Page({
   // /**
   //  * 生命周期函数--监听页面显示
   //  */
-  // onShow: function () {
-  
-  // },
+  onShow: function () {
+    
+  },
 
   // /**
   //  * 生命周期函数--监听页面隐藏

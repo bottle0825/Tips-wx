@@ -1,0 +1,4 @@
+<!--pages/add_note/index.wxml-->
+<input placeholder='请输入手账名' bindinput='noteInput'></input>
+<text>*手账名不得超过6个字</text>
+<view bindtap='createNote'>创建手账本</view>

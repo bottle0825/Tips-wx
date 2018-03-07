@@ -33,3 +33,20 @@ swiper{
   display: block;
   font-size: 32rpx;
 }
+.write{
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 18rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #65b393;
+  box-shadow: 0 0 20rpx #999;
+  z-index: 99;
+}
+.write image{
+  width: 64rpx;
+  height: 64rpx;
+}

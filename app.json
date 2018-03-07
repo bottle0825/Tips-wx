@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/home/index",
     "pages/find/index",
     "pages/mine/index",
@@ -9,7 +10,6 @@
     "pages/login/login",
     "pages/pwd_find/pwd_find",
     "pages/pwd_set/pwd_set",
-    "pages/register/register",
     "pages/register_message/register_message",
     "pages/homepage/index",
     "pages/follower/index",
@@ -18,7 +18,8 @@
     "pages/words/index",
     "pages/account/index",
     "pages/password/index",
-    "pages/addAccount/index"
+    "pages/addAccount/index",
+    "pages/add_note/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

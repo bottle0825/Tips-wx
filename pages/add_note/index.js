@@ -1,37 +1,34 @@
-// pages/home/index.js
-import * as Model from '../model/note.js'
+// pages/add_note/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [],
+    note: ''
   },
-  addNote: function () {
-    wx.navigateTo({
-      url: '/pages/add_note/index',
+  noteInput: function (e) {
+    this.setData({
+      note: e.detail.value
     })
   },
-  openBooks: function (e) {
-    console.log(e.currentTarget.dataset.id)
-    wx.navigateTo({
-      url: '/pages/tips/index',
+  createNote: function () {
+    wx.request({
+      url: getApp().data.servsers + '/note/create',
+      method: 'POST',
+      data: {
+        
+      }
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Model.noteGetMsg().then(res => {
-      console.log(res)
-      if(res.status == 1){
-        this.setData({
-          list: res.data
-        })
-      }
-    });
+    wx.setNavigationBarTitle({
+      title: '创建手账本',
+    })
+  
   },
 
   /**
