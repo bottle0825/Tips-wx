@@ -14,7 +14,16 @@ export default (url, data = {}) => {
           method: 'POST',
           data: data,
           success(res) {
-            resolve(res.data);
+            if(res.data.status != -3000){
+              resolve(res.data);
+            }else{
+              wx.showToast({
+                title: '重新登陆',
+              })
+              wx.redirectTo({
+                url: '/pages/register/register',
+              })
+            }
           },
           fail(err) {
             getApp().setData({

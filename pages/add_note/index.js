@@ -1,23 +1,29 @@
 // pages/add_note/index.js
+import * as Model from '../model/note.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    note: ''
+    title: ''
   },
   noteInput: function (e) {
     this.setData({
-      note: e.detail.value
+      title: e.detail.value
     })
   },
   createNote: function () {
-    wx.request({
-      url: getApp().data.servsers + '/note/create',
-      method: 'POST',
-      data: {
-        
+    Model.noteCreate({
+      title: this.data.title
+    }).then(res => {
+      if(res.status == 1){
+        wx.showToast({
+          title: '手账创建成功',
+        })
+        wx.switchTab({
+          url: '/pages/home/index',
+        })
       }
     })
   },
