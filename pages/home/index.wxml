@@ -1,7 +1,7 @@
 <!--pages/home/index.wxml-->
 <swiper indicator-dots="true" indicator-active-color="#fff" skip-hidden-item-layout='true'>
   <block wx:for="{{list}}">
-    <swiper-item bindtap='openBooks' bindtouchstart="mytouchstart" bindtouchend="mytouchend" data-id='{{item.id}}'>
+    <swiper-item bindtap='clickBooks' bindtouchstart="mytouchstart" bindtouchend="mytouchend" data-id='{{item.id}}'>
       <view class='books'>
         <view class='cover'>
         <image src='/images/book.jpg'></image>

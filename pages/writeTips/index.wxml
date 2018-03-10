@@ -1,16 +1,17 @@
 <!--pages/writeTips/index.wxml-->
 <view>
   <view class='photo'>
-    <image src='/images/tips.png'></image>
+    <image src='{{img}}' bindtap='chooseImg'></image>
   </view>
   <view class='content'>
     <text class='time'>
       {{date}} {{time}}  {{week}}
     </text>
-    <input placeholder='TITLE'></input>
-    <textarea placeholder='content'></textarea>
+    <input placeholder='TITLE' bindinput='titleInput'></input>
+    <textarea placeholder='content' bindinput='contentInput'></textarea>
     <text class='address'>
       写于： {{address}}
     </text>
   </view>
+  <view class='btn' bindtap='addTips'>写入手账</view>
 </view>

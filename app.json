@@ -19,7 +19,8 @@
     "pages/account/index",
     "pages/password/index",
     "pages/addAccount/index",
-    "pages/add_note/index"
+    "pages/add_note/index",
+    "pages/tipsDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

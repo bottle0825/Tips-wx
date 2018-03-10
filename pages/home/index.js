@@ -38,17 +38,17 @@ Page({
   },
   openBooks: function (id) {
     wx.navigateTo({
-      url: '/pages/tips/index',
+      url: '/pages/tips/index?id=' + id,
     })
   },
-  openBooks: function (e) {
+  clickBooks: function (e) {
     console.log(e.currentTarget.dataset.id)
     var touchTime = this.data.touch_end - this.data.touch_start;
     console.log(touchTime);
     if (touchTime > 350){
       this.deleteNote(e.currentTarget.dataset.id);
     } else {
-      this.addNote(e.currentTarget.dataset.id);
+      this.openBooks(e.currentTarget.dataset.id);
     }
   },
   //按下事件开始  

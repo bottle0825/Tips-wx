@@ -3,7 +3,7 @@
   手账篇数：{{count}}
 </view>
 <view class='content'>
-  <view class='item' wx:for='{{list}}' bindtap='openTips' data-id='{{item.id}}'>
+  <view class='item' wx:for='{{list}}' bindtap='clickTips' bindtouchstart="mytouchstart" bindtouchend="mytouchend" data-id='{{item.id}}'>
     <view class='pic'>
       <image src='/images/book.jpg'></image>
     </view>
