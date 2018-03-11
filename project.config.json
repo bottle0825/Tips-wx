@@ -105,6 +105,12 @@
 					"name": "basketChoose",
 					"pathName": "pages/basketChoose/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "writeSaid",
+					"pathName": "pages/writeSaid/index",
+					"query": ""
 				}
 			]
 		}

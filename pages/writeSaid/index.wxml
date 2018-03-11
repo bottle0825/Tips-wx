@@ -1,0 +1,6 @@
+<!--pages/writeSaid/index.wxml-->
+<view class='main'>
+  <textarea placeholder='这一刻的想法。。。' bindinput='detailInput'></textarea>
+  <image src='{{img}}' bindtap='chooseImg' mode="widthFix"></image>
+</view>
+<view class='btn' bindtap='saidCreate'>发表</view>

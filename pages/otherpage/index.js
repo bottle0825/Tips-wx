@@ -7,18 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    id: 0,
+    username: '',
+    head: '',
+    followFlag: false,
     list: []
-  },
-  writeSaid: function () {
-    wx.navigateTo({
-      url: '/pages/writeSaid/index',
-    })
-  },
-  openOther: function (e) {
-    wx.navigateTo({
-      url: '/pages/otherpage/index?id=' + e.currentTarget.dataset.id
-    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -50,10 +43,16 @@ Page({
         }
       })
     }
-    Model.saidGetMsg().then(res => {
+    Model.saidGetMsgOther({
+      id: options.id
+    }).then(res => {
       if(res.status == 1){
         this.setData({
-          list: res.data
+          id: options.id,
+          username: res.data.username,
+          head: res.data.head,
+          followFlag: res.data.followFlag,
+          list: res.data.list
         })
       }
     })

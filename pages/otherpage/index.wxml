@@ -4,21 +4,24 @@
     <image src='/images/tips.png' mode="widthFix"></image>
   </view>
   <view class='shadow'></view>
-  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap='openExit'></image>
-  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <image class="userinfo-avatar" src="{{head}}" background-size="cover" bindtap='openExit'></image>
+  <text class="userinfo-nickname">{{username}}</text>
 </view>
 <view class='shows' wx:for='{{list}}' data-id='{{item.id}}'>
   <view>
-    <image class='head' src="{{item.head}}" bindtap='openOther' data-id='{{item.user}}'></image>
+    <image class='head' src="{{head}}"></image>
   </view>
   <view>
-    <view class='nickname'>{{item.nickname}}</view>
+    <view class='nickname'>{{username}}</view>
     <view class='content'>{{item.detail}}</view>
     <image class='img' src='/images/tips.png'></image>
     <view class='time'>{{item.date}} {{item.time}}</view>
   </view>
 </view>
 
-<view class='write' bindtap='writeSaid'>
-  <image src='/icons/add.png'></image>
+<view wx:if='{{!followFlag}}' class='follow' bindtap='follow'>
+  关注
+</view>
+<view wx:else class='followed'>
+  已关注
 </view>

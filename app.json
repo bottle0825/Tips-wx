@@ -21,7 +21,9 @@
     "pages/addAccount/index",
     "pages/add_note/index",
     "pages/tipsDetail/index",
-    "pages/basketChoose/index"
+    "pages/basketChoose/index",
+    "pages/writeSaid/index",
+    "pages/otherpage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

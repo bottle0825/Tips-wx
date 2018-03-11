@@ -60,20 +60,39 @@
   color: #999;
   font-size: 32rpx;
 }
-.write{
+.follow{
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 40rpx;
-  right: 40rpx;
-  width: 100rpx;
-  height: 100rpx;
+  left: 40rpx;
+  width: 150rpx;
+  height: 150rpx;
+  line-height: 150rpx;
   padding: 18rpx;
   box-sizing: border-box;
   border-radius: 50%;
-  background: #65b393;
+  background: #ffc65d;
   box-shadow: 0 0 20rpx #999;
   z-index: 99;
+  color: #fff;
 }
-.write image{
-  width: 64rpx;
-  height: 64rpx;
+.followed{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 40rpx;
+  left: 40rpx;
+  width: 150rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  padding: 18rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #ccc;
+  box-shadow: 0 0 20rpx #999;
+  z-index: 99;
+  color: #fff;
 }
