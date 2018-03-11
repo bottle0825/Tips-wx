@@ -20,7 +20,8 @@
     "pages/password/index",
     "pages/addAccount/index",
     "pages/add_note/index",
-    "pages/tipsDetail/index"
+    "pages/tipsDetail/index",
+    "pages/basketChoose/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

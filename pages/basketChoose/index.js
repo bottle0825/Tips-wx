@@ -1,4 +1,4 @@
-// pages/basket/index.js
+// pages/basketChoose/index.js
 import * as Model from '../model/basket.js'
 Page({
 
@@ -6,41 +6,61 @@ Page({
    * 页面的初始数据
    */
   data: {
-    count: 4,
-    list: []
+    id: 0,
+    oldId: 0,
   },
-  openTips: function (e) {
-    console.log(e)
-    wx.navigateTo({
-      url: '/pages/basketChoose/index?id=' + e.currentTarget.dataset.id + '&oldId=' + e.currentTarget.dataset.oldid,
+  recoverClick: function () {
+    Model.basketRecover({
+      id: this.data.id,
+      oldId: this.data.oldId
+    }).then(res => {
+      if(res.status == 1){
+        wx.navigateBack()
+      }
+    })
+  },
+  deleteClick: function () {
+    wx.showModal({
+      title: '警告',
+      content: '永久删除手账将无法恢复，请确认是否删除！',
+      confirmText: '确定',
+      cancelText: '取消',
+      success: (res) => {
+        if (res.confirm) {
+          Model.basketDelete({
+            id: this.data.id
+          }).then(res => {
+            if (res.status == 1) {
+              wx.navigateBack()
+            }
+          })
+        }
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Model.basketGetMsg().then(res => {
-      if(res.status == 1){
-        this.setData({
-          list: res.data,
-          count: res.data.length
-        })
-      }
+    this.setData({
+      id: options.id,
+      oldId: options.oldId
     })
+    console.log(this.data)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+  
   },
 
   /**

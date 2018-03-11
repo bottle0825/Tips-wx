@@ -1,0 +1,19 @@
+/* pages/basketChoose/index.wxss */
+page{
+  background: #efefef;
+}
+view{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.recover{
+  margin-top: 230rpx;
+  background: #65b393;
+}
+.delete{
+  background: #fb705d;
+}

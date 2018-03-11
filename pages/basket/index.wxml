@@ -3,7 +3,7 @@
   手账篇数：{{count}}
 </view>
 <view class='content'>
-  <view class='item' wx:for='{{list}}' bindtap='openTips' data-id='{{item.id}}'>
+  <view class='item' wx:for='{{list}}' bindtap='openTips' data-id='{{item.id}}' data-oldId='{{item.oldId}}'>
     <text>{{item.date}}</text>
     <view class='title'>
       {{item.title}}

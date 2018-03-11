@@ -99,6 +99,12 @@
 					"name": "register",
 					"pathName": "pages/register/register",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "basketChoose",
+					"pathName": "pages/basketChoose/index",
+					"query": ""
 				}
 			]
 		}

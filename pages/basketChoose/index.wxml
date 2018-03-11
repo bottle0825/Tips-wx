@@ -1,0 +1,3 @@
+<!--pages/basketChoose/index.wxml-->
+<view class='recover' bindtap='recoverClick'>立即恢复</view>
+<view class='delete' bindtap='deleteClick'>永久删除</view>
