@@ -1,28 +1,30 @@
 // pages/follower/index.js
+import * as Model from '../model/user.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      id: 0,
-      head: '/images/tips.png',
-      nickname: '我贼TM牛批',
-      words: '没错最牛逼的那个其实就是我啊！！',
-    }, {
-      id: 0,
-      head: '/images/tips.png',
-      nickname: '我贼TM牛批',
-      words: '没错最牛逼的那个其实就是我啊！！',
-    }]
+    list: []
+  },
+  openOther: function (e) {
+    wx.navigateTo({
+      url: '/pages/otherpage/index?id=' + e.currentTarget.dataset.id
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    Model.userGetFollowing().then(res => {
+      if (res.status == 1) {
+        this.setData({
+          list: res.data
+        })
+      }
+    })
   },
 
   /**

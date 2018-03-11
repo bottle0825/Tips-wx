@@ -70,9 +70,13 @@
   font-size: 48rpx; 
 }
 .daylist .item image{
-  height: 100rpx;
-  width: 100rpx;
+  height: 60rpx;
+  width: 60rpx;
+  padding: 20rpx;
   vertical-align: bottom;
+  background: #65b393;
+  border-radius: 50%;
+  margin-right: 20rpx;
 }
 .daylist .item text{
   display: inline-block;

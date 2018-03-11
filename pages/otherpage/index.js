@@ -1,6 +1,7 @@
 // pages/find/index.js
 const app = getApp()
 import * as Model from '../model/said.js'
+import * as Model_u from '../model/user.js'
 Page({
 
   /**
@@ -13,42 +14,39 @@ Page({
     followFlag: false,
     list: []
   },
+  follow: function () {
+    Model_u.userFollowing({
+      id: this.data.id
+    }).then(res => {
+      if(res.status == 1){
+        this.setData({
+          followFlag: true
+        })
+      }
+    })
+  },
+  followed: function () {
+    Model_u.userUnFollow({
+      id: this.data.id
+    }).then(res => {
+      if (res.status == 1) {
+        this.setData({
+          followFlag: false
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    var id = options.id;
     Model.saidGetMsgOther({
-      id: options.id
+      id: id
     }).then(res => {
       if(res.status == 1){
         this.setData({
-          id: options.id,
+          id: id,
           username: res.data.username,
           head: res.data.head,
           followFlag: res.data.followFlag,
@@ -69,7 +67,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+    
   },
 
   /**

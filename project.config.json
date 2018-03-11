@@ -111,6 +111,12 @@
 					"name": "writeSaid",
 					"pathName": "pages/writeSaid/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addaccount",
+					"pathName": "pages/addAccount/index",
+					"query": ""
 				}
 			]
 		}

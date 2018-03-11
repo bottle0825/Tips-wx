@@ -3,13 +3,13 @@
   <image src='/icons/search.png'></image>
   <input placeholder='搜索'></input>
 </view>
-<view class='shows' wx:for='{{list}}' data-id='{{item.id}}'>
+<view class='shows' wx:for='{{list}}' data-id='{{item.id}}' bindtap='openOther'>
   <view>
     <image class='head' src="{{item.head}}"></image>
   </view>
   <view class='center'>
-    <view class='nickname'>{{item.nickname}}</view>
-    <view class='words'>{{item.words}}</view>
+    <view class='nickname'>{{item.username}}</view>
+    <view class='words'>没错我就是最牛逼的那一个啊哈哈哈哈！！！</view>
   </view>
   <view class='follow'>
     已关注

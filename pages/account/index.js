@@ -1,10 +1,55 @@
 // pages/account/index.js
+import * as Model from '../model/account.js'
+
+var list_out = [{
+  id: 0,
+  img: '/icons/clothes.png',
+  txt: '服饰'
+}, {
+  id: 1,
+  img: '/icons/food.png',
+  txt: '食物'
+}, {
+  id: 2,
+  img: '/icons/house.png',
+  txt: '住宿'
+}, {
+  id: 3,
+  img: '/icons/car.png',
+  txt: '出行'
+}, {
+  id: 4,
+  img: '/icons/game.png',
+  txt: '娱乐'
+}, {
+  id: 5,
+  img: '/icons/other.png',
+  txt: '其他'
+}]
+var list_in = [{
+  id: 0,
+  img: '/icons/money.png',
+  txt: '工资'
+}, {
+  id: 1,
+  img: '/icons/cite.png',
+  txt: '奖金'
+}, {
+  id: 2,
+  img: '/icons/red.png',
+  txt: '红包'
+}, {
+  id: 3,
+  img: '/icons/other.png',
+  txt: '其他'
+}]
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    typeList: [list_out,list_in],
     budget: 3000,
     in: 200.00,
     out: 500.00,
@@ -67,7 +112,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    Model.accountGetDayMsg().then(res => {
+      if(res.status == 1){
+        this.setData({
+          dayIn: res.data.dayIn,
+          dayOut: res.data.dayOut,
+          daylist: res.data.list
+        })
+      }
+      console.log(this.data.typeList[0][1].img)
+    })
   },
 
   /**

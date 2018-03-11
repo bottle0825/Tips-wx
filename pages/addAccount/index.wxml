@@ -1,2 +1,25 @@
 <!--pages/addAccount/index.wxml-->
-<text>pages/addAccount/index.wxml</text>
+<view class='tab'>
+  <view class="{{active == 0 ?'active':''}}" bindtap='outClick'>支出</view>
+  <view class="{{active == 1 ?'active':''}}" bindtap='inClick'>收入</view>
+</view>
+<view >
+  <view class='inp'>
+    <image src='{{img}}'></image>
+    <text>{{type}}</text>
+    <input placeholder='0.00' type='digit' bindinput='moneyInput'></input>
+  </view>
+  <view class='icons' wx:if="{{active == 0}}">
+    <view wx:for='{{list_out}}' data-id='{{item.id}}' bindtap='chooseType'>
+      <image src='{{item.img}}'></image>
+      <text>{{item.txt}}</text>
+    </view>
+  </view>
+  <view class='icons' wx:if="{{active == 1}}">
+    <view wx:for='{{list_in}}' data-id='{{item.id}}' bindtap='chooseType'>
+      <image src='{{item.img}}'></image>
+      <text>{{item.txt}}</text>
+    </view>
+  </view>
+</view>
+<view class='btn' bindtap='addAccount'>记账</view>

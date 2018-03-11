@@ -22,6 +22,6 @@
 <view wx:if='{{!followFlag}}' class='follow' bindtap='follow'>
   关注
 </view>
-<view wx:else class='followed'>
+<view wx:else class='followed' bindtap='followed'>
   已关注
 </view>

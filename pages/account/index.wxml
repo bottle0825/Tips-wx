@@ -27,9 +27,9 @@
       <text>今日支出:{{dayOut}}</text>
     </view>
     <view class='item' wx:for="{{daylist}}">
-      <image src='{{item.iconimg}}'></image> 
-      <text>{{item.icon}}</text>
-      <view wx:if="{{item.type}}" class='moneyin'>+{{item.money}}</view> 
+      <image src='{{typeList[item.in_out][item.type].img}}'></image> 
+      <text>{{typeList[item.in_out][item.type].txt}}</text>
+      <view wx:if="{{item.in_out}}" class='moneyin'>+{{item.money}}</view> 
       <view wx:else class='moneyout'>-{{item.money}}</view>
     </view>
   </view>
