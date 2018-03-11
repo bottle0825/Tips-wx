@@ -81,7 +81,7 @@ Page({
     console.log(options)
     this.setData({
       note: options.id,
-      date: date.getFullYear() + '.' + date.getMonth() + '.' + date.getDate(),
+      date: date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate(),
       time: date.getHours() + '.' + date.getMinutes(),
       week: '星期' + this.data.weeks[date.getDay()]
     })
