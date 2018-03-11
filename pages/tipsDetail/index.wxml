@@ -1,2 +1,17 @@
-<!--pages/tipsDetail/index.wxml-->
-<text>pages/tipsDetail/index.wxml</text>
+<!--pages/writeTips/index.wxml-->
+<view>
+  <view class='photo'>
+    <image src='{{img}}' bindtap='chooseImg'></image>
+  </view>
+  <view class='content'>
+    <text class='time'>
+      {{date}} {{time}}  {{week}}
+    </text>
+    <input placeholder='TITLE' bindinput='titleInput' value='{{title}}'></input>
+    <textarea placeholder='content' bindinput='contentInput' value='{{content}}'></textarea>
+    <text class='address'>
+      写于： {{address}}
+    </text>
+  </view>
+  <!-- <view class='btn' bindtap='editTips'>修改手账</view> -->
+</view>

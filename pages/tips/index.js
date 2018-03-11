@@ -38,7 +38,7 @@ Page({
   openTips: function (id) {
     var id = id;
     wx.navigateTo({
-      url: '/pages/tipsDetail/index?id=' + id,
+      url: '/pages/tipsDetail/index?id=' + id + '&note=' + this.data.note,
     })
   },
   deleteTips: function (id) {
