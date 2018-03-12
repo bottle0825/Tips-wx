@@ -14,7 +14,7 @@
   <view>
     <view class='nickname'>{{username}}</view>
     <view class='content'>{{item.detail}}</view>
-    <image class='img' src='/images/tips.png'></image>
+    <image class='img' src="{{'http://101.132.68.52:9999/'+item.img}}"></image>
     <view class='time'>{{item.date}} {{item.time}}</view>
   </view>
 </view>

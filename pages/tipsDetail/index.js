@@ -94,7 +94,7 @@ Page({
         id: res.data.id,
         title: res.data.title,
         content: res.data.content,
-        img: res.data.img,
+        img: getApp().data.imgPath +  res.data.img,
         date: res.data.date,
         time: res.data.time,
       })

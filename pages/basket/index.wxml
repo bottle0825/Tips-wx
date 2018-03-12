@@ -9,7 +9,7 @@
       {{item.title}}
     </view>
     <view class='pic'>
-      <image src='/images/book.jpg'></image>
+      <image src="{{'http://101.132.68.52:9999/'+item.img}}"></image>
     </view>
   </view>
 </view>

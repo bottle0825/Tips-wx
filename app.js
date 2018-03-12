@@ -1,7 +1,8 @@
 //app.js
 App({
   data: {
-    servsers: 'https://wx.mrdtips.top'
+    servsers: 'https://wx.mrdtips.top',
+    imgPath: 'http://101.132.68.52:9999/'
   },
   onLaunch: function () {
     // 展示本地存储能力
