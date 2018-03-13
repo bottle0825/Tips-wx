@@ -23,7 +23,8 @@
     "pages/tipsDetail/index",
     "pages/basketChoose/index",
     "pages/writeSaid/index",
-    "pages/otherpage/index"
+    "pages/otherpage/index",
+    "pages/addWord/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

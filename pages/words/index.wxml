@@ -1,2 +1,25 @@
 <!--pages/words/index.wxml-->
-<text>pages/words/index.wxml</text>
+<view class='tab'>
+  <view class="{{active == 0 ?'active':''}}" bindtap='wordClick'>单词</view>
+  <view class="{{active == 1 ?'active':''}}" bindtap='sentenceClick'>句子</view>
+</view>
+<view class='word' wx:if="{{active == 0}}">
+  <view wx:for="{{wordlist}}">
+    <text class='item'>{{item.english}}</text>
+    <text class='item'>{{item.chinese}}</text>
+    <view class='unpass' wx:if="{{!item.status}}" data-id="{{item.id}}" bindtap='beihui'>背会</view>
+    <view class='pass' wx:else>已会</view>
+  </view>
+  <view class='btn' bindtap='addWord'>添加单词</view>
+</view>
+<view class='sentence' wx:if="{{active == 1}}">
+  <view wx:for="{{sentencelist}}">
+    <view class='item'>
+      <view>{{item.english}}</view>
+      <view>{{item.chinese}}</view>
+    </view>
+    <view class='unpass' wx:if="{{!item.status}}" data-id="{{item.id}}" bindtap='beihui'>背会</view>
+    <view class='pass' wx:else>已会</view>
+  </view>
+  <view class='btn' bindtap='addSentence'>添加句子</view>
+</view>

@@ -18,7 +18,7 @@ Page({
     date: '2018.02.15',
     time: '15:12',
     week: '星期三',
-    address: '公仆路 武进区 常州市 江苏省 中国',
+    address: '弘景大道 江宁区 南京市 江苏省 中国',
     weeks: ['日', '一', '二', '三', '四', '五', '六']
   },
   titleInput: function(e){

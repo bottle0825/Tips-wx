@@ -92,9 +92,7 @@ Page({
       money: this.data.money
     }).then(res => {
       if(res.status == 1){
-        wx.navigateTo({
-          url: '/pages/account/index',
-        })
+        wx.navigateBack()
       }
     })
   },

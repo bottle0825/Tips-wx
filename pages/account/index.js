@@ -117,7 +117,10 @@ Page({
         this.setData({
           dayIn: res.data.dayIn,
           dayOut: res.data.dayOut,
-          daylist: res.data.list
+          in: res.data.dayIn,
+          out: res.data.dayOut,
+          daylist: res.data.list,
+          budget: (res.data.dayIn - res.data.dayOut).toFixed(2)
         })
       }
       console.log(this.data.typeList[0][1].img)
@@ -135,7 +138,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.onLoad()
   },
 
   /**

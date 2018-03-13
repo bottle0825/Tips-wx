@@ -1,4 +1,4 @@
-// pages/words/index.js
+// pages/addWord/index.js
 import * as Model from '../model/word.js'
 Page({
 
@@ -6,36 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
-    wordlist: [],
-    sentencelist: []
+    chinese: '',
+    english: '',
+    type: 0,
   },
-  wordClick: function () {
+  englishInput: function (e) {
     this.setData({
-      active: 0,
+      english: e.detail.value
     })
   },
-  sentenceClick: function () {
+  chineseInput: function (e) {
     this.setData({
-      active: 1
+      chinese: e.detail.value
     })
   },
-  addWord: function () {
-    wx.navigateTo({
-      url: '/pages/addWord/index?type=0',
-    })
-  },
-  addSentence: function () {
-    wx.navigateTo({
-      url: '/pages/addWord/index?type=1',
-    })
-  },
-  beihui: function (e) {
-    Model.wordChangeStatus({
-      id: e.currentTarget.dataset.id
+  add: function () {
+    Model.wordAdd({
+      english: this.data.english,
+      chinese: this.data.chinese,
+      type: this.data.type
     }).then(res => {
       if(res.status == 1){
-        this.onLoad()
+        wx.navigateBack()
       }
     })
   },
@@ -43,13 +35,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Model.wordGetMsg().then(res => {
-      if(res.status == 1){
-        this.setData({
-          wordlist: res.data.wordlist,
-          sentencelist: res.data.sentencelist
-        })
-      }
+    console.log(options.type)
+    this.setData({
+      type: options.type
     })
   },
 
@@ -64,7 +52,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+  
   },
 
   /**

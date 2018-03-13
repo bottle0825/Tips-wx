@@ -1,0 +1,4 @@
+<!--pages/addWord/index.wxml-->
+<input placeholder='请输入英文' bindinput='englishInput'></input>
+<input placeholder='请输入中文' bindinput='chineseInput'></input>
+<view class='btn' bindtap='add'>确认添加</view>

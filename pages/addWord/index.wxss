@@ -1,0 +1,20 @@
+/* pages/addWord/index.wxss */
+page{
+  background: #efefef;
+}
+input{
+  width: 100%;
+  line-height: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  padding-left: 20rpx;
+}
+.btn{
+  line-height: 100rpx;
+  width: 100%;
+  background: #65b393;
+  margin-top: 30rpx;
+  color: #fff;
+  text-align: center;
+}
